@@ -3,7 +3,7 @@ FoodDeliveryApp (ASP.NET Core MVC + 21stDev UI)
 
 A sample Food Delivery Web Application built in ASP.NET Core MVC following the DotNetTutorials tutorial as the base, but extended with 21stDev UI components and custom styles.
 
-🚀 Features
+# 🚀 Features
 
 Customer Module
 
@@ -25,7 +25,7 @@ Auto-rejection of orders not processed within 5 minutes
 
 Orders view automatically refreshes to show latest status
 
-UI / UX Enhancements
+# UI / UX Enhancements
 
 Integrated 21stDev UI components for modern styling and responsiveness
 
@@ -35,11 +35,11 @@ Light & dark theme support
 
 Responsive design (works well on mobile / tablet)
 
-<img width="1888" height="903" alt="image" src="https://github.com/user-attachments/assets/0a8f9734-2e6c-40fe-be7e-0b0b11d0bd3f" />
+# <img width="1888" height="903" alt="image" src="https://github.com/user-attachments/assets/0a8f9734-2e6c-40fe-be7e-0b0b11d0bd3f" />
 
-<img width="517" height="80" alt="image" src="https://github.com/user-attachments/assets/70781e53-01a2-4ab4-acb3-9779df747d75" />
+# <img width="517" height="80" alt="image" src="https://github.com/user-attachments/assets/70781e53-01a2-4ab4-acb3-9779df747d75" />
 
-<img width="658" height="95" alt="image" src="https://github.com/user-attachments/assets/81507f6e-dda6-4ed8-ab06-79e952d02797" />
+# <img width="658" height="95" alt="image" src="https://github.com/user-attachments/assets/81507f6e-dda6-4ed8-ab06-79e952d02797" />
 
 
 Architecture / Tech Stack
