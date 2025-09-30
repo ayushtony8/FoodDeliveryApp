@@ -42,7 +42,7 @@ Responsive design (works well on mobile / tablet)
 # <img width="658" height="95" alt="image" src="https://github.com/user-attachments/assets/81507f6e-dda6-4ed8-ab06-79e952d02797" />
 
 
-Architecture / Tech Stack
+# Architecture / Tech Stack
 
 ASP.NET Core MVC (Controllers, Views, Razor)
 
