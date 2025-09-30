@@ -1,0 +1,210 @@
+﻿/* Glow Menu Styles */
+.glow-menu-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.glow-menu {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark theme support */
+body.dark-theme .glow-menu {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Glow effect on hover */
+.glow-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%), radial-gradient(circle at 60% 50%, rgba(168, 85, 247, 0.3) 0%, transparent 50%), radial-gradient(circle at 90% 50%, rgba(239, 68, 68, 0.3) 0%, transparent 50%);
+    border-radius: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-menu:hover::before {
+    opacity: 1;
+}
+
+.glow-menu-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.glow-menu-item {
+    position: relative;
+}
+
+.glow-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: #6b7280;
+    transition: color 0.3s ease;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+    .glow-menu-link:hover {
+        color: #111827;
+    }
+
+body.dark-theme .glow-menu-link {
+    color: #9ca3af;
+}
+
+    body.dark-theme .glow-menu-link:hover {
+        color: #f9fafb;
+    }
+
+/* Active state */
+.glow-menu-link.active {
+    color: #111827;
+}
+
+body.dark-theme .glow-menu-link.active {
+    color: #f9fafb;
+}
+
+/* Glow background for each item */
+.glow-menu-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow-menu-link:hover::before,
+.glow-menu-link.active::before {
+    opacity: 1;
+    transform: scale(2);
+}
+
+/* Individual item gradients */
+.glow-menu-link[data-color="blue"]::before {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.06) 50%, rgba(29, 78, 216, 0) 100%);
+}
+
+.glow-menu-link[data-color="orange"]::before {
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, rgba(234, 88, 12, 0.06) 50%, rgba(194, 65, 12, 0) 100%);
+}
+
+.glow-menu-link[data-color="green"]::before {
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, rgba(22, 163, 74, 0.06) 50%, rgba(21, 128, 61, 0) 100%);
+}
+
+.glow-menu-link[data-color="red"]::before {
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.06) 50%, rgba(185, 28, 28, 0) 100%);
+}
+
+/* Icon and text container for flip animation */
+.glow-menu-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.glow-menu-link:hover .glow-menu-content {
+    transform: rotateX(-90deg);
+    opacity: 0;
+}
+
+/* Back face for flip animation */
+.glow-menu-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.glow-menu-link:hover .glow-menu-back {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+/* Icon colors */
+.glow-menu-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.glow-menu-link[data-color="blue"]:hover .glow-menu-icon,
+.glow-menu-link[data-color="blue"].active .glow-menu-icon {
+    color: #3b82f6;
+}
+
+.glow-menu-link[data-color="orange"]:hover .glow-menu-icon,
+.glow-menu-link[data-color="orange"].active .glow-menu-icon {
+    color: #f97316;
+}
+
+.glow-menu-link[data-color="green"]:hover .glow-menu-icon,
+.glow-menu-link[data-color="green"].active .glow-menu-icon {
+    color: #22c55e;
+}
+
+.glow-menu-link[data-color="red"]:hover .glow-menu-icon,
+.glow-menu-link[data-color="red"].active .glow-menu-icon {
+    color: #ef4444;
+}
+
+/* FontAwesome icon sizing */
+.glow-menu-icon.fas,
+.glow-menu-icon.far,
+.glow-menu-icon.fab {
+    font-size: 1.25rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .glow-menu-list {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .glow-menu-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
