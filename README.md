@@ -1,7 +1,7 @@
 # FoodDeliveryApp
 FoodDeliveryApp (ASP.NET Core MVC + 21stDev UI)
 
-A sample Food Delivery Web Application built in ASP.NET Core MVC following the DotNetTutorials tutorial as the base, but extended with 21stDev UI components and custom styles.
+A sample Food Delivery Web Application built in ASP.NET Core MVC, extended with 21stDev UI components and custom styles.
 
 # 🚀 Features
 
